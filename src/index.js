@@ -170,7 +170,7 @@ function resetGame(text) {
   roundCount = 0;
 
   alert(text);
-  setText(heading, "Simon Says");
+  setText(heading, "Freddy Says");
   startButton.classList.remove("hidden");
   statusSpan.classList.add("hidden");
   padContainer.classList.add("unclickable");
