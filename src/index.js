@@ -118,7 +118,7 @@ function activatePads(sequence) {
 function playComputerTurn() {
   padContainer.classList.add("unclickable");
 
-  setText(statusSpan, "The computer's turn...");
+  setText(statusSpan, "Freddys turn...");
   setText(heading, `Round ${roundCount} of ${maxRoundCount}`);
 
   computerSequence.push(getRandomItem(pads).color)
@@ -141,7 +141,7 @@ function checkPress(color) {
   setText(statusSpan, `Your turn: ${remainingPresses} presses left`);
 
   if (computerSequence[index] !== playerSequence[index]) {
-    resetGame("Oops! Game over.");
+    resetGame("Oh no! Freddy got you.");
     return;
   }
 
@@ -154,7 +154,7 @@ function checkPress(color) {
 
 function checkRound() {
   if (playerSequence.length === maxRoundCount) {
-    resetGame("Congrats! You won!");
+    resetGame("Congrats! You survived!");
     return;
   } else {
     roundCount++;
