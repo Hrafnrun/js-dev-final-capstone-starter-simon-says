@@ -112,7 +112,7 @@ h1 {
 .pad-red:hover,
 .pad-red:focus {
   background-color: #ff451a;
-  transform: rotate(-5deg);
+  transform: rotate(5deg);
 }
 
 .pad-red:active,
@@ -129,7 +129,7 @@ h1 {
 .pad-green:hover,
 .pad-green:focus {
   background-color: #8cc218;
-  transform: rotate(-10deg);
+  transform: rotate(5deg);
 }
 
 .pad-green:active,
@@ -163,7 +163,7 @@ h1 {
 .pad-blue:hover,
 .pad-blue:focus {
   background-color: #139ddd;
-  transform: rotate(10deg);
+  transform: rotate(5deg);
 }
 
 .pad-blue:active,
