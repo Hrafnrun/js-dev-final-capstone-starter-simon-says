@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Microbe&display=swap');
 
 html {
-  background: url('../assets/Freddy Background') no-repeat center center fixed;
+  background: url('../assets/background.png') no-repeat center center fixed;
   box-sizing: border-box;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  color: red;
+  color: yellow;
   font-family: 'Rubik Microbe', sans-serif;
   display: flex;
   justify-content: center;
@@ -52,43 +52,20 @@ h1 {
   cursor: pointer;
 }
 
-.pad-red {
-  border-top-left-radius: 200px;
+.js-pad-red {
   background-color: red;
-  top: 0;
-  left: 0;
 }
 
-.pad-green {
-  border-top-right-radius: 200px;
+.js-pad-green {
   background-color: green;
-  top: 0;
-  right: 0;
 }
 
-.pad-yellow {
-  border-bottom-right-radius: 200px;
-  background-color: yellow;
-  bottom: 0;
-  right: 0;
-}
-
-.pad-blue {
-  border-bottom-left-radius: 200px;
+.js-pad-blue {
   background-color: blue;
-  bottom: 0;
-  left: 0;
 }
 
-/* Hover, focus, and active states for each pad */
-.pad:hover {
-  filter: brightness(1.2);
-  z-index: 10;
-}
-
-.pad:active {
-  filter: brightness(1.3);
-  transform: scale(0.92);
+.js-pad-yellow {
+  background-color: yellow;
 }
 
 .hidden {
@@ -111,6 +88,7 @@ h1 {
 
 .start-button:hover {
   color: greenyellow;
+  font-size: 18px;
   border-color: greenyellow;
   transform: rotate(5deg);
 }
@@ -118,6 +96,91 @@ h1 {
 .status {
   font-size: 22px;
 }
+
+.pad-container {
+  display: grid;
+  grid-template-rows: 200px 200px;
+  grid-template-columns: 200px 200px;
+  grid-gap: 5px;
+  margin: 20px;
+}
+
+.pad-red {
+  border-top-left-radius: 200px;
+  background-color: red;
+}
+
+.pad-red:hover,
+.pad-red:focus {
+  background-color: #ff451a;
+  transform: rotate(-5deg);
+}
+
+.pad-red:active,
+.pad-red.activated {
+  background-color: #ff5c36;
+  transform: translateY(10px);
+}
+
+.pad-green {
+  border-top-right-radius: 200px;
+  background-color: green;
+}
+
+.pad-green:hover,
+.pad-green:focus {
+  background-color: #8cc218;
+  transform: rotate(5deg);
+}
+
+.pad-green:active,
+.pad-green.activated {
+  background-color: #a0ea00;
+  transform: translateY(10px);
+}
+
+.pad-yellow {
+  border-bottom-right-radius: 200px;
+  background-color: yellow;
+}
+
+.pad-yellow:hover,
+.pad-yellow:focus {
+  background-color: #ffb900;
+  transform: rotate(5deg);
+}
+
+.pad-yellow:active,
+.pad-yellow.activated {
+  background-color: #ffca3d;
+  transform: translateY(10px);
+}
+
+.pad-blue {
+  border-bottom-left-radius: 200px;
+  background-color: blue;
+}
+
+.pad-blue:hover,
+.pad-blue:focus {
+  background-color: #139ddd;
+  transform: rotate(5deg);
+}
+
+.pad-blue:active,
+.pad-blue.activated {
+  background-color: #2bbcff;
+  transform: translateY(10px);
+}
+
+.hidden {
+  display: none;
+}
+
+.unclickable {
+  pointer-events: none;
+}
+
 
 .skill-level-dropdown {
   display: block;
@@ -136,8 +199,4 @@ h1 {
 
 .skill-level-dropdown:focus {
   outline: none;
-}
-
-.unclickable {
-  pointer-events: none;
 }
