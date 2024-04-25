@@ -1,41 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Microbe&display=swap');
 
 html {
-  background: url('../assets/background.png') no-repeat center center fixed;
-  box-sizing: border-box;
+  background: url('../assets/Freddy Background') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 body {
-  color: yellow;
   font-family: 'Rubik Microbe', sans-serif;
+  color: red;
   display: flex;
   justify-content: center;
-  height: 100vh;
   align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
 main {
   background-color: #000;
   padding: 40px;
+  text-align: center;
 }
 
 h1 {
-  text-align: center;
   font-size: 40px;
 }
 
-.game-controls {
-  text-align: center;
-}
-
-.game-container {
-  text-align: center;
-  margin-top: 100px;
+.game-controls,
+.status {
+  font-size: 22px;
 }
 
 .pad-container {
@@ -50,127 +47,93 @@ h1 {
   width: 50%;
   height: 50%;
   cursor: pointer;
-}
-
-.js-pad-red {
-  background-color: red;
-}
-
-.js-pad-green {
-  background-color: green;
-}
-
-.js-pad-blue {
-  background-color: blue;
-}
-
-.js-pad-yellow {
-  background-color: yellow;
-}
-
-.hidden {
-  display: none;
-}
-
-.start-button {
-  display: inline-block;
-  height: 38px;
-  padding: 0 30px;
-  color: yellow;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 600;
-  text-transform: uppercase;
-  background-color: transparent;
-  border: 1px solid yellow;
-  cursor: pointer;
-}
-
-.start-button:hover {
-  color: greenyellow;
-  font-size: 18px;
-  border-color: greenyellow;
-  transform: rotate(5deg);
-}
-
-.status {
-  font-size: 22px;
-}
-
-.pad-container {
-  display: grid;
-  grid-template-rows: 200px 200px;
-  grid-template-columns: 200px 200px;
-  grid-gap: 5px;
-  margin: 20px;
+  transition: box-shadow 0.3s ease, transform 0.2s;
 }
 
 .pad-red {
   border-top-left-radius: 200px;
   background-color: red;
-}
-
-.pad-red:hover,
-.pad-red:focus {
-  background-color: #ff451a;
-  transform: rotate(-5deg);
-}
-
-.pad-red:active,
-.pad-red.activated {
-  background-color: #ff5c36;
-  transform: translateY(10px);
+  top: 0;
+  left: 0;
 }
 
 .pad-green {
   border-top-right-radius: 200px;
   background-color: green;
-}
-
-.pad-green:hover,
-.pad-green:focus {
-  background-color: #8cc218;
-  transform: rotate(5deg);
-}
-
-.pad-green:active,
-.pad-green.activated {
-  background-color: #a0ea00;
-  transform: translateY(10px);
+  top: 0;
+  right: 0;
 }
 
 .pad-yellow {
   border-bottom-right-radius: 200px;
   background-color: yellow;
-}
-
-.pad-yellow:hover,
-.pad-yellow:focus {
-  background-color: #ffb900;
-  transform: rotate(5deg);
-}
-
-.pad-yellow:active,
-.pad-yellow.activated {
-  background-color: #ffca3d;
-  transform: translateY(10px);
+  bottom: 0;
+  right: 0;
 }
 
 .pad-blue {
   border-bottom-left-radius: 200px;
   background-color: blue;
+  bottom: 0;
+  left: 0;
 }
 
-.pad-blue:hover,
-.pad-blue:focus {
-  background-color: #139ddd;
+.pad:active,
+.pad.activated {
+  transform: translateY(5px);
+}
+
+/* Glow effect */
+.pad-red.activated {
+  box-shadow: 0 0 20px 10px rgba(255, 0, 0, 0.7);
+}
+
+.pad-green.activated {
+  box-shadow: 0 0 20px 10px rgba(0, 255, 0, 0.7);
+}
+
+.pad-yellow.activated {
+  box-shadow: 0 0 20px 10px rgba(255, 255, 0, 0.7);
+}
+
+.pad-blue.activated {
+  box-shadow: 0 0 20px 10px rgba(0, 0, 255, 0.7);
+}
+
+.start-button,
+.skill-level-dropdown {
+  color: yellow;
+  background-color: transparent;
+  border: 1px solid yellow;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.start-button {
+  height: 38px;
+  padding: 0 30px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.start-button:hover {
+  color: greenyellow;
+  border-color: greenyellow;
   transform: rotate(5deg);
 }
 
-.pad-blue:active,
-.pad-blue.activated {
-  background-color: #2bbcff;
-  transform: translateY(10px);
+.skill-level-dropdown {
+  display: block;
+  margin-top: 10px;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.skill-level-dropdown option {
+  background-color: #000;
+  color: yellow;
 }
 
 .hidden {
@@ -179,24 +142,4 @@ h1 {
 
 .unclickable {
   pointer-events: none;
-}
-
-
-.skill-level-dropdown {
-  display: block;
-  margin-top: 10px;
-  font-size: 14px;
-  padding: 5px;
-  background-color: #000;
-  color: yellow;
-  border: 1px solid yellow;
-}
-
-.skill-level-dropdown option {
-  background-color: #000;
-  color: yellow;
-}
-
-.skill-level-dropdown:focus {
-  outline: none;
 }
