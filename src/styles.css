@@ -105,7 +105,7 @@ h1 {
 }
 
 .pad-red {
-  border-top-left-radius: 200px;
+  border-top-left-radius: 100px;
   background-color: red;
 }
 
@@ -122,7 +122,7 @@ h1 {
 }
 
 .pad-green {
-  border-top-right-radius: 200px;
+  border-top-right-radius: 100px;
   background-color: green;
 }
 
@@ -139,7 +139,7 @@ h1 {
 }
 
 .pad-yellow {
-  border-bottom-right-radius: 200px;
+  border-bottom-right-radius: 100px;
   background-color: yellow;
 }
 
@@ -156,7 +156,7 @@ h1 {
 }
 
 .pad-blue {
-  border-bottom-left-radius: 200px;
+  border-bottom-left-radius: 100px;
   background-color: blue;
 }
 
